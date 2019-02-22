@@ -1,4 +1,4 @@
-service: inspirity-web
+service: happy-serverless-nextjs
 
 plugins:
   - serverless-apigw-binary

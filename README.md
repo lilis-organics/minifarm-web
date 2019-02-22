@@ -1,4 +1,4 @@
-# inspirity-web
+# happy-serverless-nextjs
 A serverless boilerplate for web application with nextjs and koa.
 
 ## Stack
