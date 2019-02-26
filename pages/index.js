@@ -1,10 +1,9 @@
-import Header from '../components/header';
+import Layout from '../components/layout';
 
 const Index = () => (
-  <div>
-    <Header />
+  <Layout>
     <p>Happy coding with serverless and nextjs!</p>
-  </div>
+  </Layout>
 );
 
 export default Index;
