@@ -1,5 +1,12 @@
-function Home() {
-  return <div>Welcome to next.js!</div>;
-}
+import Link from 'next/link';
 
-export default Home;
+const Index = () => (
+  <div>
+    <Link href="/about">
+      <button style={{ fontSize: 20 }}>About Page</button>
+    </Link>
+    <p>Happy coding with serverless and nextjs!</p>
+  </div>
+);
+
+export default Index;

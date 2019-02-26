@@ -22,6 +22,10 @@ A serverless boilerplate for web application with nextjs and koa.
   ```
   npm run build
   ```
+* debug (run with nextjs server to enjoy the hot reload and load time compiling)
+  ```
+  npm run debug
+  ```
 * start with koa server for local development
   ```
   npm run dev
