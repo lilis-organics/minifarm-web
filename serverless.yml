@@ -46,7 +46,8 @@ package:
     - package.json
     - server.js
     - static/**
-    - .next/**
+    - .next/serverless/**
+    - .next/static/**
 
 custom:
   config: ${file(./config/${self:provider.stage}.yml)}
