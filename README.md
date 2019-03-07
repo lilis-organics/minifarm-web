@@ -81,7 +81,22 @@ http://localhost:3000/static/hello.txt
   sls package will include lots of npm packages for dev only for nextjs, which causes the package size is so big (about 25M). The solution is to move next, react, and react-dom npm packages to devDependencies, and the package size reduced to M.
 * There are 403 errors in browser when running on aws lambda
 * koa log still has 404 although the status is actually 200 or 304 on the response
-
+* when deploy to aws, there is base path, e.g. /dev, however, the nextjs Link doesn't know of the base path
+Tried to use the following code but it doens't workd
+```
+module.exports = {
+  target: 'serverless',
+  assetPrefix: process.env.stage === 'local' ? '' : process.env.stage
+};
+```
+I have to use this one instead when deploy to aws dev environment, and manually change to '' for local testing
+```
+module.exports = {
+  target: 'serverless',
+  assetPrefix: 'dev'
+};
+```
+There is still no '/dev' in the url when use Link to navigate.
 ## TODOs
 * use axios or superagent to get data from web api
 * introduce css & UI framework

@@ -7,6 +7,7 @@ const statics = require('koa-static');
 
 const indexPage = require('./.next/serverless/pages/index.js');
 const aboutPage = require('./.next/serverless/pages/about.js');
+const postPage = require('./.next/serverless/pages/post.js');
 
 const server = new Koa();
 
@@ -25,6 +26,13 @@ router.get('/', async ctx => {
 
 router.get('/about', async ctx => {
   await aboutPage.render(ctx.req, ctx.res);
+  ctx.response = false;
+});
+
+router.get('/p/:id', async ctx => {
+  const actualPage = '/post';
+  const queryParams = { id: ctx.params.id };
+  await postPage.render(ctx.req, ctx.res, actualPage, queryParams);
   ctx.response = false;
 });
 
