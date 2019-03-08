@@ -21,7 +21,7 @@ Post.getInitialProps = async context => {
 };
 
 Post.propTypes = {
-  show: PropTypes.json.isRequired
+  show: PropTypes.json
 };
 
 export default Post;

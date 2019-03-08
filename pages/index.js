@@ -17,6 +17,32 @@ const Index = props => (
         </li>
       ))}
     </ul>
+
+    <style jsx>{`
+      h1,
+      p,
+      a {
+        font-family: 'Arial';
+      }
+
+      ul {
+        padding: 0;
+      }
+
+      li {
+        list-style: none;
+        margin: 5px 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: blue;
+      }
+
+      a:hover {
+        opacity: 0.6;
+      }
+    `}</style>
   </Layout>
 );
 
@@ -32,7 +58,7 @@ Index.getInitialProps = async () => {
 };
 
 Index.propTypes = {
-  shows: PropTypes.json.isRequired
+  shows: PropTypes.json
 };
 
 export default Index;
