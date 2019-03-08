@@ -5,9 +5,7 @@ const logger = require('koa-logger');
 const mount = require('koa-mount');
 const statics = require('koa-static');
 
-const indexPage = require('./.next/serverless/pages/index.js');
-const aboutPage = require('./.next/serverless/pages/about.js');
-const postPage = require('./.next/serverless/pages/post.js');
+const getPage = page => require(`./.next/serverless/pages/${page}`);
 
 const server = new Koa();
 
@@ -20,19 +18,24 @@ server.use(mount('/_next', statics(path.join(__dirname, '.next'))));
 const router = new Router();
 
 router.get('/', async ctx => {
-  await indexPage.render(ctx.req, ctx.res);
+  await getPage('index').render(ctx.req, ctx.res);
   ctx.response = false;
 });
 
 router.get('/about', async ctx => {
-  await aboutPage.render(ctx.req, ctx.res);
+  await getPage('about').render(ctx.req, ctx.res);
   ctx.response = false;
 });
 
 router.get('/p/:id', async ctx => {
-  const actualPage = '/post';
   const queryParams = { id: ctx.params.id };
-  await postPage.render(ctx.req, ctx.res, actualPage, queryParams);
+  ctx.query = queryParams;
+  await getPage('post').render(ctx.req, ctx.res);
+  ctx.response = false;
+});
+
+router.get('*', async ctx => {
+  await getPage('_error').render(ctx.req, ctx.res);
   ctx.response = false;
 });
 
