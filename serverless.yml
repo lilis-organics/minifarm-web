@@ -1,4 +1,4 @@
-service: happy-serverless-nextjs
+service: minifarm-web
 
 plugins:
   - serverless-apigw-binary

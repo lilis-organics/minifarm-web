@@ -1,5 +1,5 @@
 {
-  "name": "happy-serverless-nextjs",
+  "name": "minifarm-web",
   "version": "0.0.1",
   "description": "A serverless boilerplate for web application with nextjs and koa.",
   "main": "index.js",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yanfeng/happy-serverless-nextjs.git"
+    "url": "git+https://github.com/lilis-organics/minifarm-web.git"
   },
   "keywords": [
     "serverless",
@@ -31,9 +31,9 @@
   "author": "Yanfeng Tian",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/yanfeng/happy-serverless-nextjs/issues"
+    "url": "https://github.com/lilis-organics/minifarm-web/issues"
   },
-  "homepage": "https://github.com/yanfeng/happy-serverless-nextjs#readme",
+  "homepage": "https://github.com/lilis-organics/minifarm-web#readme",
   "dependencies": {
     "axios": "^0.18.0",
     "koa": "^2.7.0",

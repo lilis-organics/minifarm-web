@@ -1,4 +1,4 @@
-# happy-serverless-nextjs
+# minifarm-web
 A serverless boilerplate for web application with nextjs and koa.
 
 ## Stack
