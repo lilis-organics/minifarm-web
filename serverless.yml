@@ -2,7 +2,8 @@ service: minifarm-web
 
 plugins:
   - serverless-apigw-binary
-  #- serverless-domain-manager
+  # comment out this line if you don't have a registered domain name
+  - serverless-domain-manager
   - serverless-offline
 
 provider:
@@ -56,10 +57,10 @@ custom:
       - '*/*'
   customDomain:
     domainName: ${self:custom.config.domain}
-    basePath: '/'
+    basePath: ''
     stage: ${self:provider.stage}
     createRoute53Record: true
-    # endpointType: 'regional'
+    #endpointType: 'regional'
     # if the ACM certificate is created in a region except for `'us-east-1'` you need `endpointType: 'regional'`
 
 functions:

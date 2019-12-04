@@ -1,3 +1,3 @@
-domain: mydomain.com
+domain: dev.minifarm.ai
 provider:
   memory: 128
