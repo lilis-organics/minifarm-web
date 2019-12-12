@@ -8,7 +8,7 @@ plugins:
 
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs10.x
   stage: ${opt:stage, 'local'}
   region: us-east-2
   memorySize: ${self:custom.config.provider.memory}
