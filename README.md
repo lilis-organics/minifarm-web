@@ -58,7 +58,7 @@ A serverless boilerplate for web application with nextjs and koa.
   ```
 * deep-clean: remove the generated .next and .serverless folders, remove node_modules folder and package-lock.json, then run ```npm install``` to restore node packages and regenerate package-lock.json file
   ```
-  npm run clean
+  npm run deep-clean
   ```
 ## User Guides
 * index page\
