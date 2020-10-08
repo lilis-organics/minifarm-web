@@ -46,7 +46,8 @@ package:
     - package-lock.json
     - package.json
     - server.js
-    - static/**
+    - public/static/**
+    - public/favicon.ico
     - .next/serverless/**
     - .next/static/**
 
