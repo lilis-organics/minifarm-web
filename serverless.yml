@@ -69,7 +69,25 @@ functions:
     handler: index.handler
     events:
       - http: ANY /
-      - http: ANY /{proxy+}
+      - http:
+          path: /{proxy+}
+          method: ANY
+          request:
+            parameters:
+              headers:
+                Authorization: true
+          integration: lambda
+          # authorizer: 
+          #   name: ${self:custom.config.domain}
+          #   type: COGNITO_USER_POOLS
+
+#resources:
+#  Resources:
+#    NewResource:
+#      Type: AWS::S3::Bucket
+#      Properties:
+#        BucketName: my-new-bucket
+
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
